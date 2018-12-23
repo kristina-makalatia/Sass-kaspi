@@ -1,0 +1,78 @@
+/*Base classes*/
+.container{
+	max-width:1170px;
+	width:100%;
+	margin:0 auto;
+}
+%flex{
+   display:flex;   
+   justify-content: space-between;
+   align-items:center;
+}
+.display-flex{
+    @extend %flex;
+} 
+%test{
+    font-size:25px;
+    color:$color01;
+    border: 1px solid black;
+}
+.text1{
+    @extend %test;
+}
+.text2{
+    @extend %test;
+}
+.text3{
+    @extend %test;
+}
+
+/*Navigation*/
+.header{
+    padding:15px 0;
+    .logo{
+        width:100px; 
+    }
+    .navigation{
+        margin:auto;
+        .navigation-ul{
+            display: flex;
+            .navigation-li{
+                margin-right:15px;
+                &:nth-child(4){
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    .social-ul{
+        display: flex;
+        align-items: flex-start;
+        .social-li{
+            &::after{
+            content: "";
+            width:2px;
+            height:25px;
+            background:$color01;
+            display: inline-block;
+            margin: 0 10px;
+            vertical-align: top;
+            }
+            &.active::after{
+                display: none;
+            }
+            .social-a{
+                font-size:25px;
+            }
+        }  
+    }
+}
+.grey-bg{
+    background-color: $color-section;
+    .title{
+        color:$color01;
+        font-size: $size03;
+    }
+}
+
+
